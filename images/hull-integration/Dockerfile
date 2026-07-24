@@ -5,7 +5,7 @@ FROM ubuntu:24.04@sha256:786a8b558f7be160c6c8c4a54f9a57274f3b4fb1491cf65146521ae
 # them offline and never fetches a checksum live at build time.
 #
 # renovate: datasource=github-releases depName=PowerShell/PowerShell
-ARG PS_VERSION=7.6.3
+ARG PS_VERSION=7.6.4
 # Checksum of powershell_${PS_VERSION}-1.deb_amd64.deb (from the release hashes.sha256).
 # Source: https://github.com/PowerShell/PowerShell/releases/download/v<version>/hashes.sha256
 ARG PS_CHECKSUM=f03200f25c511583c648aecb8d8ce75789db2cf668b39803ee639476d716a3dd
