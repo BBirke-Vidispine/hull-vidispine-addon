@@ -93,3 +93,6 @@ case "$DEP_NAME" in
     echo "No checksum handler for '${DEP_NAME}'; nothing to do."
     ;;
 esac
+
+echo "Deliberately crashing at the end of update-checksum.sh for test of red marking." >&2
+exit 1
