@@ -79,6 +79,8 @@ jobs:
           # NOT change this. Blank -> repo default branch (normal operation); set a feature
           # branch to test config/hook changes that only exist on that branch.
           RENOVATE_BASE_BRANCHES: ${{ inputs.base_branch != '' && format('["{0}"]', inputs.base_branch) || format('["{0}"]', github.event.repository.default_branch) }}
+          # To avoid using default branch for renovate.json config, but to merge from the currently selected base branch.
+          RENOVATE_USE_BASE_BRANCH_CONFIG: merge
           # Only set a branch prefix with timestamp 'renovate-yyyyymmddhhmmss' if the input is true. Otherwise, leave it blank to use Renovate's default 'renovate/<dep>'.
           RENOVATE_BRANCH_PREFIX: ${{ inputs.add_unique_branch_prefix && format('renovate/{0}/', github.run_id) || 'renovate/' }}
           # Defeat Renovate's memory of CLOSED/MERGED PRs. Renovate does NOT read git history -
